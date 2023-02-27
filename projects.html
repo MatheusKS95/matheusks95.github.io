@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<head>
+	<html lang="en">
+	<title>Projects - Matheus K Schaefer - Portfolio</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Gaming;
+			src: url(font/RetroGaming.ttf);
+		}
+		body { background-color: black; font-family: "Gaming"; color: #41FF00; }
+		ascii { font-family: "Mono"; }
+		ul#menulist li { display:inline; padding:16px; }
+		a:link { color: #41FF00; }
+		a:visited { color: green; }
+		a:hover { color: white; }
+		table, th, td { border: 1px solid #41FF00; border-collapse: collapse; }
+	</style>
+</head>
+<body>
+	<p>>> DRI_PRIME=1 ./mks_portfolio --projects</p>
+	<header>
+		<h1>Matheus K. Schaefer</h1>
+	<header>
+	<div id="ascii"><pre>
+██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+                                                                       
+	</pre></div>
+	<div class=center>
+		<ul id="menulist">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="skills.html">Skills</a></li>
+			<li>>Projects<</li>
+			<li><a href="about.html">About me</a></li>
+		</ul>
+	</div>
+	<h2><strong>Things I Do (or Did)</strong></h2>
+	<p>Here is a non-exhaustive list of projects I worked on. I'll subdivide the list in 3 parts: the first,
+	personal projects that are open-sourced; the second, proprietary ones and then some closed-source projects
+	of my own.</p>
+	<br></br>
+	<h3>My own open-source projects</h3>
+
+	<h4>SuperBasicMusicPlayer</h4>
+	<p>SuperBasicMusicPlayer, or SBMP, is an extremely simplistic music player made for Unix-like systems (might
+	work under Windows via MSYS2). This was initially made in a weekend while I was out of internet. Over time, I
+	made some small little updates. It can play MP3, FLAC and OGG (Vorbis) music files. Music files can be played
+	via terminal parameter or via drag-and-drop.</p>
+	<p>It uses Premake as build system. Since it uses very recent versions of SDL2, SDL_mixer and SDL_ttf, it already
+	includes such dependencies as static libraries (vendoring), but if you already have the most up-to-date versions
+	on your system, you might want to use them instead.</p>
+	<table>
+		<tr>
+			<td>Website</td>
+			<td>Coming soon</td>
+		</tr>
+		<tr>
+			<td>Repository</td>
+			<td><a href="https://github.com/MatheusKS95/SuperBasicMusicPlayer">Github</a></td>
+		</tr>
+		<tr>
+			<td>Licence</td>
+			<td>GNU GPLv3</td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td>Supported (2022 - present)</td>
+		</tr>
+	</table>
+
+	<h4>VSDSL</h4>
+	<p>This project is a data structure library with support for stacks, queues and doubly-linked lists.
+	This serves as a guide for other projects of mine that needs some list support. However, none of the
+	data structures supported are contiguous in memory, so they are slower than other, contiguous implementations.</p>
+	<table>
+		<tr>
+			<td>Website</td>
+			<td>Not available</td>
+		</tr>
+		<tr>
+			<td>Repository</td>
+			<td><a href="https://bitbucket.org/MatheusKS95/very-simple-data-structures-library/src/master/">Bitbucket</a></td>
+		</tr>
+		<tr>
+			<td>Licence</td>
+			<td>GNU LGPL 3.0</td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td>Supported (2021 - present)</td>
+		</tr>
+
+	</table>
+
+	<h4>SpaceCrap</h4>
+	<p>SpaceCrap is my first "full" 2D game, written in C with SDL2. It was based on a series of
+	tutorials made by Parallel Realities. It's a pretty good tutorial and teaches you how to build an entire game
+	with lots of features, including hi-scores. Despite being based on existing code, it was heavily modified, with
+	two levels and intermission screens.</p>
+	<p>The first level is already a hard one, with swarms of enemy spaceships attacking the player. It follows the idea
+	of Capcom's 1943: The Battle of Midway but with spaceships instead of Japanese planes. The second level doesn't have
+	enemy swarms but the enemies are extremely powerful.</p>
+	<table>
+		<tr>
+			<td>Website</td>
+			<td>Coming soon</td>
+		</tr>
+		<tr>
+			<td>Repository</td>
+			<td><a href="https://bitbucket.org/MatheusKS95/spacecrap/src/master/">Bitbucket</a></td>
+		</tr>
+		<tr>
+			<td>Licence</td>
+			<td>GNU GPLv3 (based on a GPLv2 code)</td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td>No longer updated (2020 - 2021)</td>
+		</tr>
+	</table>
+
+	<h4>SpaceCrap 2</h4>
+	<p>SpaceCrap 2 is a simple game that I wrote in C using Raylib as a shared library. This is my first attempt at 
+	making a game in 3D without using any full-blown game engine such as Unity/Unreal/Godot. Unlike the first game, 
+	which was based on an existing game, SpaceCrap 2 was entirely written from scratch (and trial-and-error, as I was 
+	then exploring unknown territories with 3D).</p>
+	<p>The game only has one level, which is a boss battle. The player's ship now have 3 weapons and the enemy ship have
+	2 but one of them causes insta-death upon contact. SpaceCrap 2 also includes health and shield systems.</p>
+	<table>
+		<tr>
+			<td>Website</td>
+			<td>Coming soon</td>
+		</tr>
+		<tr>
+			<td>Repository</td>
+			<td><a href="https://bitbucket.org/MatheusKS95/spacecrap2/src/master/">Bitbucket</a></td>
+		</tr>
+		<tr>
+			<td>Licence</td>
+			<td>GNU GPLv3</td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td>Supported (2020 - present)</td>
+		</tr>
+	</table>
+
+	<h4>RallyCrap</h4>
+	<p>RallyCrap was my first attempt at making a game without a game engine. It's project written in C++ with SDL2 and 
+	Qt framework. It's a simple car "game" with no gameplay content, and the only purpose of this project is learning, 
+	setting a pavement for other projects such as SpaceCrap. The game itself uses SDL2, with Qt being used in the "launcher".
+	Unlike SpaceCrap and SpaceCrap 2, which was written in C, RallyCrap was written in object-oriented C++. It features
+	soundtrack and collision checking with track boundaries.</p>
+	<table>
+		<tr>
+			<td>Website</td>
+			<td>Not available</td>
+		</tr>
+		<tr>
+			<td>Repository</td>
+			<td><a href="https://bitbucket.org/MatheusKS95/rallycrap/src/master/">Bitbucket</a></td>
+		</tr>
+		<tr>
+			<td>Licence</td>
+			<td>GNU GPLv3</td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td>Unsupported (2019 - 2020)</td>
+		</tr>
+	</table>
+
+	<h3>Proprietary Projects</h3>
+	<p>These projects are under NDA so I can't give further information.</p>
+
+	<h4>Vulcano</h4>
+	<p>Vulcano was a web-based business management tool written in C# (Asp.NET Core) made to help wholesale retailers
+	with day-to-day business activities including, but not limited to, inventory and fiscal management. I was tasked with
+	inventory submodules, API construction and testing.</p>
+	<table>
+		<tr>
+			<td>Tool's website</td>
+			<td>Not available</td>
+		</tr>
+		<tr>
+			<td>Company</td>
+			<td><a href="https://splora.com.br/">Splora Tecnologia</a> - they changed company's goals so Vulcano is not mentioned anymore.</td>
+		</tr>
+		<tr>
+			<td>When I worked on it</td>
+			<td>2017-2018</td>
+		</tr>
+	</table>
+
+	<h4>Sensum Supremo</h4>
+	<p>Supremo is a desktop-based business management tool written in C# (WinForms) made with a wider audience in mind (but a lot
+	of modules focused around manufacturing and retail). I was tasked with inventory, transport and reporting submodules, with general
+	maintenance on fiscal and manufacturing submodules as well.</p>
+	<table>
+		<tr>
+			<td>Tool's website</td>
+			<td>Not available (when I was there it was the only tool available for new clients)</td>
+		</tr>
+		<tr>
+			<td>Company</td>
+			<td><a href="https://sensum.inf.br/">Sensum Sistemas</a></td>
+		</tr>
+		<tr>
+			<td>When I worked on it</td>
+			<td>2019-2020</td>
+		</tr>
+	</table>
+
+	<h4>Time to Fix</h4>
+	<p>Time to Fix is a business management tool written in TypeScript (with React) focused on automotive repair shops. It includes
+	scheduling and management of cars undergoing maintenance. I worked there briefly, mostly dealing with a report generation tool and
+	general bugfixes.</p>
+	<table>
+		<tr>
+			<td>Tool's website</td>
+			<td><a href="https://linktr.ee/Timetofix">Linktree</a></td>
+		</tr>
+		<tr>
+			<td>Company</td>
+			<td>Time to Fix</td>
+		</tr>
+		<tr>
+			<td>When I worked on it</td>
+			<td>2021</td>
+		</tr>
+	</table>
+
+	<h3>My own closed-source projects</h3>
+
+	<h4>Project Coronet</h4>
+	<p>This is my most ambicious project to date. Project Coronet (codename, as it doesn't have an official name yet) is a racing
+	simulator/game engine under development by me. The engine's goal is to have an OpenGL and SDL3 rendering backend (when SDL3 comes up
+	with it's own rendering soon), physics engine with focus on automotive physics and audio engine that's still in it's infancy. It's
+	written in C. It's still too early for being showcased, but in it's current state I have partial OpenGL renderer with some working
+	shaders.</p>
+	<p>It's currently a personal, proprietary project but, when the day to make it public comes, it'll be probably open-sourced under either
+	GNU GPL or MPL licence.</p>
+	<table>
+		<tr>
+			<td>Status</td>
+			<td>Under development</td>
+		</tr>
+		<tr>
+			<td>When</td>
+			<td>Since 2019 (codenamed as Project Coronet since 2022)</td>
+		</tr>
+	</table>
+
+	<div id="ascii"><pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠤⠖⢒⠂⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⣀⠀⠀⠀⠀⠀⢠⠖⠁⠀⠀⠀⠀⠀⠀⠢⣥⣢⠀⠀⠀⠀⠀⣠⣤⠀
+⢀⣟⣿⣦⠀⠀⠀⣰⡿⠿⠷⠶⣄⠀⠀⢠⠾⠟⠛⠛⢷⡀⠀⢀⡼⣿⣇⡇
+⠈⠛⠛⠿⢕⡂⢴⠁⠀⠀⠀⢀⠈⠆⠠⣮⣴⢤⡀⣀⣸⣗⣶⡧⠒⠉⠉⠁
+⠀⠀⠀⠀⠀⢹⠀⠀⠴⣺⣿⣿⠇⠀⠀⠛⡿⣽⣿⣽⠿⠛⢻⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡌⠀⠀⠈⠉⢩⠀⠀⠀⠀⠀⣸⣒⣄⠀⠀⠀⠀⠇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡇⠀⢀⡴⠖⠉⠛⠓⠲⠶⠾⠿⠿⠿⢏⡳⡀⠄⣾⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠃⠀⠞⠀⣀⣀⣀⣀⣀⣀⣀⣤⣤⣶⣿⣇⢧⠀⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡄⠀⠀⠀⠈⠫⢽⣽⣉⣹⣁⣧⣿⠟⣱⣿⣾⢀⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢃⠀⠀⠀⠀⠀⠀⠉⠙⠩⠤⠭⣶⣋⡟⢸⢁⣿⠏⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠝⡇⣘⡾⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠢⣀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣷⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠠⠤⠤⠤⠤⠾⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+	</pre></div>
+
+
+	<p>>> ./copyright</p>
+	<p>Copyright (C) Matheus Klein Schaefer. Todos os direitos reservados.</p>
+</body>

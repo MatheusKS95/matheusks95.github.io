@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+	<html lang="en">
+	<title>SuperBasicMusicPlayer - Matheus K Schaefer - Portfolio</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Gaming;
+			src: url(../font/RetroGaming.ttf);
+		}
+		body { background-color: black; font-family: "Gaming"; color: #41FF00; }
+		ascii { font-family: "Mono"; }
+		ul#menulist li { display:inline; padding:16px; }
+		a:link { color: #41FF00; }
+		a:visited { color: green; }
+		a:hover { color: white; }
+		table, th, td { border: 1px solid #41FF00; border-collapse: collapse; }
+	</style>
+</head>
+<body>
+	<p>>> ./mks_portfolio -p --sbmp</p>
+	<header>
+		<h1>Matheus K. Schaefer</h1>
+	<header>
+	<div id="ascii"><pre>
+██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+                                                                       
+	</pre></div>
+	<div class=center>
+		<ul id="menulist">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="skills.html">Skills</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="about.html">About me</a></li>
+		</ul>
+	</div>
+	<h2><strong>SuperBasicMusicPlayer</strong></h2>
+	<p>SuperBasicMusicPlayer, or SBMP, is an extremely simplistic music player made for Unix-like systems (might
+	work under Windows via MSYS2). This was initially made in a weekend while I was out of internet. Over time, I
+	made some small little updates. It can play MP3, FLAC and OGG (Vorbis) music files. Music files can be played
+	via terminal parameter or via drag-and-drop.</p>
+	<p>It is currently a dormant project. As of today, it uses Premake as build system. Since it uses very recent
+	versions of SDL2, SDL_mixer and SDL_ttf, it already includes such dependencies as static libraries (vendoring),
+	but if you already have the most up-to-date versionson your system, you might want to use them instead.</p>
+	<p>I plan to move from Premake to CMake and use vendored, shared, fetched libraries. And I want to generate a
+	simple release using AppImage.</p>
+	<table>
+		<tr>
+			<td>Repository</td>
+			<td><a href="https://github.com/MatheusKS95/SuperBasicMusicPlayer">Github</a></td>
+		</tr>
+		<tr>
+			<td>Licence</td>
+			<td>GNU GPLv3</td>
+		</tr>
+		<tr>
+			<td>Status</td>
+			<td>Dormant (2022 - 2023)</td>
+		</tr>
+	</table>
+	<br></br>
+	<img src="https://raw.githubusercontent.com/MatheusKS95/SuperBasicMusicPlayer/main/sbmp.png"
+	alt="Screenshot of the SuperBasicMusicPlayer" width="500">
+
+	<br></br>
+
+
+	<p>>> ./copyright</p>
+	<p>Copyright (C) Matheus Klein Schaefer. Todos os direitos reservados.</p>
+</body>

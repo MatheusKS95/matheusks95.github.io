@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+	<html lang="en">
+	<title>Project Rockport - Matheus K Schaefer - Portfolio</title>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: Gaming;
+			src: url(../font/RetroGaming.ttf);
+		}
+		body { background-color: black; font-family: "Gaming"; color: #41FF00; }
+		ascii { font-family: "Mono"; }
+		ul#menulist li { display:inline; padding:16px; }
+		a:link { color: #41FF00; }
+		a:visited { color: green; }
+		a:hover { color: white; }
+		table, th, td { border: 1px solid #41FF00; border-collapse: collapse; }
+	</style>
+</head>
+<body>
+	<p>>> ./mks_portfolio -p --rockport</p>
+	<header>
+		<h1>Matheus K. Schaefer</h1>
+	<header>
+	<div id="ascii"><pre>
+██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+                                                                       
+	</pre></div>
+	<div class=center>
+		<ul id="menulist">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="skills.html">Skills</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="about.html">About me</a></li>
+		</ul>
+	</div>
+	<h2><strong>Project Rockport</strong></h2>
+	<p>Project Rockport is my most ambitious project. The goal is to make a racing simulation-focused game engine
+	(with a game to showcase it). Architecture-wise, it's still in it's infancy, with the rendering engine being
+	re-written. The chosen language is C with plug-ins written in Lua.</p>
+	<p>Originally, the graphics engine used OpenGL 4.1 but now I'm moving towards the use of WGPU-native because
+	it offers a modern API without exposing "bare metal" stuff (unlike Vulkan and DX12). There's also SDL's GPU
+	API which may (or may not) come soon and I also want to check it out.</p>
+	<p>Some utility modules are complete. The <a href="https://github.com/MatheusKS95/simple3dmath">math module</a>
+	is publicly available under the MPL license.</p>
+	<p>I plan to make a 3D audio engine using either <a href="https://github.com/mackron/miniaudio">miniaudio</a> or
+	<a href="http://openal-soft.org/">OpenAL-Soft</a>.</p>
+	<p>When it comes to physics, that's a gigantic beast to beat down, and pose a much bigger challenge than the
+	graphics, specially when it comes to simulating cars. That's a lot to study. The plan is to make something from
+	the ground up but if needed I'll use <a href="https://www.ode.org/">Open Dynamics Engine</a> or something similar
+	to help me.</p>
+	<p>There's nothing new to show up, but I have a screenshot from an earlier version, back when it still used
+	OpenGL and used an unfinished PBR pipeline (that's why it looks so weird). The screenshot is down below -- ignore
+	the gun, it was for testing 3D model loading:</p>
+
+	<img src="../showcase/ogl_1.png" alt="Screenshot of the Project Rockport when it was using OpenGL" width="500">
+
+	<br></br>
+
+
+	<p>>> ./copyright</p>
+	<p>Copyright (C) Matheus Klein Schaefer. Todos os direitos reservados.</p>
+</body>

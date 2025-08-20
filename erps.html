@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matheus Klein Schaefer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000000;
+      color: #eeffee;
+      font-family: "Fira Code", monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid #eeffee;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    .typing {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #eeffee;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #eeffee; }
+    }
+
+    main {
+      width: 100%;
+      background: #111;
+      border: 1px solid #eeffee;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #eeffee;
+      text-decoration: none;
+      border-bottom: 1px dashed #eeffee;
+    }
+
+    a:hover {
+      color: #0c0c0c;
+      background: #eeffee;
+    }
+
+    footer {
+      border-top: 2px solid #eeffee;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="typing"><a href="index.html">/> Olá, eu sou Matheus Schaefer — Desenvolvedor</a></div>
+  </header>
+  
+  <main>
+     <h2>ERPs</h2>
+     <br>
+     <p>Eu já trabalhei na produção de sistemas de gestão empresarial,
+        como funcionário, em algumas empresas da região sul do Brasil.</p>
+     <br>
+     <p>Cada sistema tendo uma proposta diferente. Um deles, de uma 
+        empresa de Passo Fundo - RS, tinha como foco atacados e era 
+        um sistema web, feito com Asp.NET Core no back-end e JavaScript 
+        com Vue.JS no front-end. Com um sistema web, não há necessidade 
+        de instalação no cliente e está disponível em qualquer 
+        dispositivo, e em qualquer sistema operacional.</p>
+     <br>
+     <p>Abordagem similar a outro sistema de gestão que trabalhei como 
+        autônomo, que usava um sistema inteiramente em React tanto no 
+        front-end quanto no back-end para auxiliar oficinas mecânicas 
+        na gestão de serviços.</p>
+     <br>
+     <p>Alternativamente, em outro sistema que trabalhei, de uma empresa 
+        de Itajaí - SC, era um sistema inteiramente desktop, feito em 
+        .NET Core e WinForms. Um sistema desktop é mais veloz e, 
+        em alguns casos, pode ser desenvolvido para funcionar off-line. 
+        Mas pode ser limitado em questões de plataforma. Os sistemas 
+        eram todos para PCs ou servidores Windows e requiriam uma equipe 
+        para instalação e manutenção.</p>
+     <br>
+     <p>No entanto, nenhum desses sistemas é disponível ao público 
+        abertamente, e são todos closed-source sob licença proprietária.</p>
+     <br>
+     <p>Pode ser que eu implemente um pequeno sistema gestão em
+        miniatura em C/C++ que possa ser usado tanto como desktop como 
+        web - isso sendo possível graças a tecnologias como WebAssembly 
+        e Emscripten. E disponibilize o mesmo sob uma licença open-source.</p>
+  </main>
+
+  <footer>
+    © 2025 Matheus Klein Schaefer
+  </footer>
+</body>
+</html>

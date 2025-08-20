@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matheus Klein Schaefer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000000;
+      color: #eeffee;
+      font-family: "Fira Code", monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid #eeffee;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    .typing {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #eeffee;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #eeffee; }
+    }
+
+    main {
+      width: 100%;
+      background: #111;
+      border: 1px solid #eeffee;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #eeffee;
+      text-decoration: none;
+      border-bottom: 1px dashed #eeffee;
+    }
+
+    a:hover {
+      color: #0c0c0c;
+      background: #eeffee;
+    }
+
+    footer {
+      border-top: 2px solid #eeffee;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="typing"><a href="index.html">/> Olá, eu sou Matheus Schaefer — Desenvolvedor</a></div>
+  </header>
+  
+  <main>
+     <h2>MKSGFX</h2>
+     <br>
+     <p>MKSGFX é o nome provisório de uma biblioteca/framework para 
+        auxiliar no desenvolvimento de aplicações com gráficos 
+        acelerados por hardware que está em desenvolvimento.</p>
+     <br>
+     <p>Venho estudando computação gráfica há mais de 6 anos, e já fiz 
+        várias pequenas aplicações exibindo minhas habilidades com 
+        OpenGL e GLSL. No entanto, a MKSGFX é um salto nesse aspecto, 
+        pois eu passei a estudar e fazer demos com APIs mais modernas.</p>
+     <br>
+     <p>No entanto, a maioria das APIs mais modernas são mais verbosas 
+        e complexas de se trabalhar do que as APIs mais antigas como a 
+        OpenGL, e muitas são focadas em um sistema ou hardware 
+        específico. Por isso, existem wrappers que podem ser usados 
+        para facilitar o desenvolvimento, e uma delas é a SDL GPU API, 
+        disponível como parte da SDL, uma framework middleware em C
+        reconhecida pela indústria.</p>
+     <br>
+     <p>Por isso, a MKSGFX está sendo feita em C, com o intuito de ser 
+        usada como submódulo em qualquer projeto CMake em C ou C++ 
+        (podendo expandir para mais linguagens de programação, se 
+        necessário). Atualmente, a MKSGFX renderiza usando Vulkan e 
+        carrega shaders SPIR-V mas suporte a DirectX 12 com shaders 
+        DXIL/DXBC é possível no futuro próximo. Suporte a Apple não é 
+        possível no momento por conta da falta de acesso à hardware 
+        Apple. Suporte a Android e Web não é possível no momento por 
+        conta de limitações na SDL GPU API até o momento, mas pode ser 
+        suportado em uma versão futura.</p>
+     <br>
+     <p>Veja a seguir uma demonstração visual da MKSGFX, usando um 
+        shader que simula a aparência visual de jogos do primeiro 
+        PlayStation:</p>
+     <br>
+     <video width="640" controls>
+        <source src="resources/playstationtest.mp4" type="video/mp4">
+           Problemas para rodar o vídeo?
+     </video> 
+  </main>
+
+  <footer>
+    © 2025 Matheus Klein Schaefer
+  </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matheus Klein Schaefer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000000;
+      color: #eeffee;
+      font-family: "Fira Code", monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    header {
+      border-bottom: 2px solid #eeffee;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    .typing {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #eeffee;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #eeffee; }
+    }
+
+    main {
+      width: 100%;
+      background: #111;
+      border: 1px solid #eeffee;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #eeffee;
+      text-decoration: none;
+      border-bottom: 1px dashed #eeffee;
+    }
+
+    a:hover {
+      color: #0c0c0c;
+      background: #eeffee;
+    }
+
+    footer {
+      border-top: 2px solid #eeffee;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="typing"><a href="index.html">/> Olá, eu sou Matheus Schaefer — Desenvolvedor</a></div>
+  </header>
+  
+  <main>
+     <h2>Projeto SPEED</h2>
+     <br>
+     <p>"Projeto SPEED" é o nome provisório de um projeto que engloba 
+        alguns projetos menores. A intenção é fazer alguns jogos de 
+        corrida que tem como objetivo implementar 3 ideias:</p>
+     <br>
+     <h3>NPR</h3>
+     <p>NPR significa <i>Non Photorealistic Rendering</i>, ou 
+        renderização não-fotorrealista. Imagine jogos como Zelda, 
+        Genshin Impact e Auto Modellista. É um pouco ambicioso, por isso 
+        estou apenas planejando como esses jogos seriam, sem ter muita 
+        implementação feita a não ser uns shaders de teste que fiz para 
+        a MKSGFX.</p>
+     <br>
+     <h3>Pseudo-retrô</h3>
+     <p>Por "pseudo-retrô" eu quero dizer aparência retrô, mas usa APIs 
+        e técnicas modernas para o desenvolvimento. Atualmente, eu estou
+        trabalhando em um título que imita os gráficos do PlayStation 1 
+        e do Nintendo 64 mas usando a raylib como framework de 
+        desenvolvimento.</p>
+     <br>
+     <h3>Retrô</h3>
+     <p>Ao contrário da abordagem "pseudo-retrô", os projetos retrô 
+        envolvem ter como alvo as plataformas antigas. Em palavras 
+        curtas, <a href="https://pt.wikipedia.org/wiki/Homebrew">homebrew</a>.
+        Recentemente obtive um compilador para 
+        <a href="https://pt.wikipedia.org/wiki/Nintendo_Entertainment_System">NES</a> 
+        e documentação técnica da plataforma, e pretendo fazer o mesmo para o 
+        <a href="https://pt.wikipedia.org/wiki/Dreamcast">Dreamcast</a> em breve.</p>
+  </main>
+
+  <footer>
+    © 2025 Matheus Klein Schaefer
+  </footer>
+</body>
+</html>

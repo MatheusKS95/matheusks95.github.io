@@ -95,7 +95,25 @@
 			{
 				border:0 none;
 				background-color:#000;
-				width: 640px;
+				width: 100%;
+			}
+			.code-box {
+				border: 1px solid #ccc;
+				padding: 15px;
+				background-color: #001100;
+				margin: 20px;
+				font-family: monospace;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+			}
+
+			.code-box pre {
+				margin: 0; /* Remove default margin from <pre> */
+			}
+
+			.code-box code {
+				display: block; /* Ensures <code> takes up full width of <pre> */
+				color: #fff;
 			}
 		</style>
 		<script src=https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js></script>
@@ -103,12 +121,126 @@
 		
 		</head>
 		<header>
-			<div class="typing"><a href="index.html">/> Olá, eu sou Matheus Schaefer — Desenvolvedor</a></div>
+			<div class="typing"><a href="../index.html">/> Olá, eu sou Matheus Schaefer — Desenvolvedor</a></div>
 		</header>
 		<body>
+			<p>Exemplo simples de um app feito em C com a Raylib, compilado com Emscripten para web. Código parcial abaixo da viewport.</p>
 			<canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
 			<p id=output>
 				<script>var Module={print:function(){var e=document.getElementById("output");return e&&(e.value=""),function(n){arguments.length>1&&(n=Array.prototype.slice.call(arguments).join(" ")),console.log(n),e&&(e.value+=n+"\n",e.scrollTop=e.scrollHeight)}}(),canvas:document.getElementById("canvas")}</script>
 				<script src=demoraylib.js async></script>
+		<br><br>
+		<div class="code-box">
+        <pre><code>
+/*
+ * Copyright (C) 2025 Matheus Klein Schaefer
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+#include "raylib.h"
+
+#if defined(PLATFORM_WEB)
+#define CUSTOM_MODAL_DIALOGS          
+#include <emscripten/emscripten.h>
+#endif
+
+static const char *vs = "#version 100\n"
+	"attribute vec3 vertexPosition;\n"
+	"attribute vec2 vertexTexCoord;\n"
+	"uniform mat4 mvp;\n"
+	"uniform vec2 uResolution;\n"
+	"varying vec3 FragPos;\n"
+	"varying vec2 TexCoord;\n"
+	"void main()\n"
+	"{\n"
+	"	vec4 clip_pos = mvp * vec4(vertexPosition, 1.0);\n"
+	"	vec3 ndc = clip_pos.xyz / clip_pos.w;\n"
+	"	vec2 screen_pos = (ndc.xy * 0.5 + 0.5) * uResolution;\n"
+	"	screen_pos = floor(screen_pos) + 0.5;\n"
+	"	vec2 ndc_q = (screen_pos / uResolution) * 2.0 - 1.0;\n"
+	"	vec2 clip_xy_q = ndc_q * clip_pos.w;\n"
+	"	FragPos  = vertexPosition;\n"
+	"	TexCoord = vertexTexCoord;\n"
+	"	gl_Position = vec4(clip_xy_q, clip_pos.z, clip_pos.w);\n"
+	"}\n"
+	"\0";
+
+static const char *fs = "#version 100\n"
+	"precision mediump float;\n"
+	"varying vec3 FragPos;\n"
+	"varying vec2 TexCoord;\n"
+	"uniform sampler2D diffuse;\n"
+	"uniform vec4 colDiffuse;\n"
+	"void main()\n"
+	"{\n"
+	"	vec4 texel = texture2D(diffuse, TexCoord);\n"
+	"	gl_FragColor = texel * colDiffuse;\n"
+	"}\n"
+	"\0";
+
+void UpdateDrawFrame(void);
+
+Model model;
+
+Camera camera = { 0 };
+
+int main(void)
+{
+	const int screenWidth = 640;
+	const int screenHeight = 480;
+
+	InitWindow(screenWidth, screenHeight, "Shader demo");
+
+	camera.position = (Vector3){ 5.0f, 5.0f, 5.0f };
+	camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };
+	camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
+	camera.fovy = 45.0f;
+	camera.projection = CAMERA_PERSPECTIVE;
+
+	Shader shader = LoadShaderFromMemory(vs, fs);
+	int resloc = GetShaderLocation(shader, "uResolution");
+	float res[2] = {screenWidth, screenHeight};
+	SetShaderValue(shader, resloc, res, SHADER_UNIFORM_VEC2);
+	
+	model = LoadModel("assets/cube.m3d");
+	Texture texture = LoadTexture("assets/tile.qoi");
+	for(int i = 0; i < model.materialCount; i++)
+	{
+		model.materials[i].shader = shader;
+		model.materials[i].maps[MATERIAL_MAP_DIFFUSE].texture = texture;
+	}
+
+	emscripten_set_main_loop(UpdateDrawFrame, 60, 1);
+
+	CloseWindow();
+
+	return 0;
+}
+
+void UpdateDrawFrame(void)
+{
+	UpdateCamera(&camera, CAMERA_ORBITAL);
+	BeginDrawing();
+		ClearBackground(BLACK);
+		BeginMode3D(camera);
+			DrawModel(model, (Vector3){ 0 }, 1.0f, WHITE);
+		EndMode3D();
+		DrawFPS(10, 10);
+	EndDrawing();
+}
+
+        </code></pre>
+    </div>
 		</body>
 </html>
